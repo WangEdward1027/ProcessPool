@@ -1,6 +1,7 @@
 #include "process_pool.h"
 #include <asm-generic/socket.h>
 
+//创建子进程
 int makeChild(process_data_t * p, int num)
 {
     for(int i = 0; i < num; ++i) {
@@ -23,8 +24,7 @@ int makeChild(process_data_t * p, int num)
     return 0;
 }
 
-
-//当该函数执行结束时，子进程要退出
+//子进程执行任务 (当该函数执行结束时，子进程要退出)
 int handleTask(int pipefd)
 {
     printf("child handle task.\n");
