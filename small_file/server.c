@@ -14,8 +14,8 @@ int tcpInit(const char * ip, const char * port)
     serveraddr.sin_addr.s_addr = inet_addr(ip);
 
     //设置网络地址可以重用
-    int on = 1;
-    int ret = setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
+    int reuse = 1;
+    int ret = setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse));
     ERROR_CHECK(ret, -1, "setsockopt");
 
     //绑定网络地址
