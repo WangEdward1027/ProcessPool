@@ -1,4 +1,3 @@
-//sendFd.c : 父子进程传递文件描述符
 #include <func.h>
 
 //sendFd(): 父进程向子进程传递文件描述符
